@@ -13,5 +13,13 @@ describe "StaticPages" do
       visit '/static_pages/home'
       page.should have_content('Build One IDeas')
     end
+
+    # Test for Help Page Content
+    it "should have the content 'Sample App'" do
+      visit '/static_pages/help'
+      page.should have_content('Build One IDeas')
+    end
+
+
   end
 end
