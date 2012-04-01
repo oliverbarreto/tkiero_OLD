@@ -21,6 +21,7 @@ describe "StaticPages" do
 #                    :text => "tKiero Demo App")
     end
  
+ 
     it "should have the h1 'Sample App'" do
       visit '/static_pages/home'
       page.should have_selector('h1', 
