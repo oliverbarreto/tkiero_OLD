@@ -33,11 +33,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-.row {
-  padding: 20px 0;
-  
-}
-
 
 /* typography */
 
@@ -151,4 +146,15 @@ footer ul li {
   color: $yellow;  
   text-decoration: none;
 
+}
+
+
+/* ROWS content */
+
+.row {
+  padding: 20px 0;
+}
+
+.row h2{
+  color:$green;
 }

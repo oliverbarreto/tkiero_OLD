@@ -4,9 +4,12 @@
           <%= link_to "tKiero Demo App", '#', id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "Home",    '#' %></li>
-              <li><%= link_to "About Us",    '#' %></li>
-              <li><%= link_to "Sign in", '#' %></li>
+            		<!-- ><li><%= link_to "Home",    '#' %></li>
+            		-->
+				<li class="active"><a href="<%= static_pages_home_path %>"><i class="icon-home icon-white"></i> Home</a></li>
+              
+            		<li><%= link_to "About Us",    '#' %></li>
+            		<li><%= link_to "Sign in", '#' %></li>
             </ul>
           </nav>
         </div>
