@@ -1,4 +1,6 @@
-    <header class="navbar navbar-fixed-top">
+	<!-- NavBar
+	-------------------------------------------------- -->
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
         	  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -6,23 +8,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <%= link_to "tKiero Demo App", '#', id: "logo" %>
-          
-          <!--><nav>
-          -->
-          <div class"nav-collapse">	
+          <a class="brand" id="logo" href="#">tKiero</a>
+		  <!-- #<%= link_to "tKiero Demo App", '#', id: "logo" %> -->
+          <div class="nav-collapse">
             <ul class="nav pull-right">
-            		<!-- ><li><%= link_to "Home",    '#' %></li>
-            		-->
-				<li class="active">
-					<a href="<%= static_pages_home_path %>"><i class="icon-home icon-white"></i> Home</a>
-				</li>
-              
-            		<li><%= link_to "About Us",    '#' %></li>
-            		<li><%= link_to "Sign in", '#' %></li>
+              <li class="active">
+				<a href="<%= static_pages_home_path %>"><i class="icon-home icon-white"></i> Home</a>
+              </li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Sing in</a></li>
             </ul>
-          </div>
-          <!--</nav> -->
+          </div><!--/.nav-collapse -->
         </div>
       </div>
-    </header>
+    </div>
+
+
+
+
