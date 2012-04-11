@@ -1,107 +1,69 @@
 require 'spec_helper'
 
 describe "StaticPages" do
-  
-  let(:base_title) { "tKiero Demo App" }
-
-  
-  describe "Home page" do
     #it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
+    # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
     #  get static_pages_index_path
     #  response.status.should be(200)
     #end
-        
-    it "should have the base title" do
-      visit '/static_pages/home'
-      page.should have_selector('title', 
-                    :text => "#{base_title}")
 
-#      page.should have_selector('title',
-#                    :text => "tKiero Demo App")
-    end
- 
- 
-    it "should have the h1 'Sample App'" do
-      visit '/static_pages/home'
-      page.should have_selector('h1', 
-                    :text => 'tKiero Demo App')
-    end
+  let(:base_title) { "tKiero Demo App" }
+  subject { page }
     
-    it "should not have a custom page title" do
-      visit '/static_pages/home'
-      page.should_not have_selector('title', 
-                    :text => '| Home')
-    end
+  describe "Home page" do
+    # With Prettier tests for the static pages. 
+    # spec/requests/static_pages_spec.rb
+
+    # Files in the spec/support directory are automatically included by RSpec, 
+    # which means that we can write the Home tests as follows:
+
+    before { visit root_path }
+
+    it { should have_content('Build One IDeas') }
+    it { should have_selector('h1',    text: "#{base_title}") }
+    it { should have_selector('title', text: full_title('')) }
+    it { should_not have_selector 'title', text: '| Home' }
+  end
+
+  describe "Home page 2" do
+    # Without Prettier tests for the static pages. 
     
+    before { visit root_path } 
+
+    it { should have_content('Build One IDeas') }
+    it { should have_selector('h1', text: "#{base_title}") }
+    #it { should have_selector('title', text: "#{base_title}") }
+    it { should have_selector('title', text: full_title('')) }
+    it { should_not have_selector('title', text: '| Home') }
   end
   
   describe "Help page" do
-
-    # Test for Help Page Content
-#    it "should have the content 'Build One IDeas'" do
-#      visit '/static_pages/help'
-#      page.should have_content('Build One IDeas')
-#    end
-
     # Test for Help Page Tittle Content
-    it "should have the base title" do
-      visit '/static_pages/help'
-      page.should have_selector('title',
-                    :text => "tKiero Demo App")
-    end
+    before { visit help_path } 
 
-    it "should have the h1 'Sample App'" do
-      visit '/static_pages/help'
-      page.should have_selector('h1', 
-                    :text => 'tKiero Demo App')
-    end
-
-    it "should not have a custom page title" do
-      visit '/static_pages/help'
-      page.should_not have_selector('title', 
-                    :text => '| Help')
-    end
+    it { should have_selector('h1', text: "#{base_title}") }
+    #it { should have_selector('title', text: "#{base_title}") }
+    it { should have_selector('title', text: full_title('')) }
+    it { should_not have_selector('title', text: '| Help') }
   end  
    
   describe "About page" do
-
     # Test for About Page Content
-#    it "should have the content 'Build One IDeas'" do
-#      visit '/static_pages/about'
-#      page.should have_content('Build One IDeas')
-#    end
-    
-    # Test for About Page Tittle Content
-    it "should have the base title" do
-      visit '/static_pages/about'
-      page.should have_selector('title',
-                    :text => "tKiero Demo App")
-    end
- 
-    it "should have the h1 'Sample App'" do
-      visit '/static_pages/about'
-      page.should have_selector('h1', 
-                    :text => 'tKiero Demo App')
-    end
+    before { visit about_path } 
+
+    it { should have_selector('h1', text: "#{base_title}") }
+    #it { should have_selector('title', text: "#{base_title}") }
+    it { should have_selector('title', text: full_title('')) }
+    it { should_not have_selector('title', text: '| About') }
   end  
 
-    it "should not have a custom page title" do
-      visit '/static_pages/about'
-      page.should_not have_selector('title', 
-                    :text => '| About')
-    end
-
   describe "Contact page" do
-    it "should exist and have a basic content 'Build One IDeas'" do
-      visit '/static_pages/contact'
-      page.should have_content('tKiero Demo App')
-    end
+    # Test for Contact Page Content
+    before { visit contact_path } 
 
-    it "should have the right base title" do
-      visit '/static_pages/contact'
-      page.should have_selector('title',
-                    :text => "tKiero Demo App")
-    end
+    it { should have_selector('h1', text: "#{base_title}") }
+    #it { should have_selector('title', text: "#{base_title}") }
+    it { should have_selector('title', text: full_title('')) }
+    it { should_not have_selector('title', text: '| Contact') }
   end
 end

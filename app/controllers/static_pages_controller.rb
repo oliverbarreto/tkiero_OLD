@@ -12,4 +12,8 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  #Static Page of the site - ABOUT
+  def contact
+  end
+
 end
