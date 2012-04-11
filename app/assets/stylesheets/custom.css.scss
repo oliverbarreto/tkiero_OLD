@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
 
+
 /* universal */
 
 html {
@@ -28,10 +29,9 @@ textarea {
 
 .center {
   text-align: center;
-}
-
-.center h1 {
+  h1 {
   margin-bottom: 10px;
+  }
 }
 
 
@@ -54,7 +54,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
+  color: $grayLight;
   
 }
 
@@ -76,86 +76,67 @@ p {
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
+  &:hover {
+    color: #00BFFF;
+    text-decoration: none;
+  }
 }
-
-#logo:hover {
-  color: #00BFFF;
-  text-decoration: none;
-}
-
 
 /* footer */
-
 footer {
 /*  margin-top: 45px;
   */
   padding-top: 15px;
   border-top: 1px solid #eaeaea;
-  color: #999;
-  
+  color: $grayLight;
+  a {
+    color: #555;
+    &:hover { 
+      color: #00BFFF;
+      text-decoration: none;
+    }
+  }  
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    margin-right: 20px;
+    li {
+    float: left;
+    margin-left: 10px;
+    }
+  }
 }
-
-footer a {
-  color: #555;
-}  
-
-footer a:hover { 
-  color: #00BFFF;
-  text-decoration: none;
-
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-  margin-right: 20px;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
-}
-
 
 /* Hero-Unit */
 .hero-unit {
 /*  background: #d9edf7; */  
   background: $blue;
+  h1{
+    color: $white;  
+  }
+  h2{
+    color: $white;  
+  }
+  h3{
+    color: $white;  
+  }
+  a{
+    color: $white;  
+    &:hover{
+      color: $yellow;  
+      text-decoration: none;
+    }
+  }
 }
-
-.hero-unit h1{
-  color: $white;  
-}
-
-.hero-unit h2{
-  color: $white;  
-}
-
-.hero-unit h3{
-  color: $white;  
-}
-
-.hero-unit a{
-  color: $white;  
-}
-
-.hero-unit a:hover{
-  color: $yellow;  
-  text-decoration: none;
-
-}
-
 
 /* ROWS content */
-
 .row {
   padding: 20px 0;
+  h2{
+    color:$green;
+  }
 }
 
-.row h2{
-  color:$green;
-}
