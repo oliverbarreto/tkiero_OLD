@@ -9,6 +9,23 @@ describe "StaticPages" do
 
   let(:base_title) { "tKiero Demo App" }
   subject { page }
+ 
+# Listing 5.35. Using an RSpec shared example to eliminate test duplication. 
+#  shared_examples_for "all static pages" do
+#    it { should have_selector('h1',    text: heading) }
+#    it { should have_selector('title', text: full_title(page_title)) }
+
+#  end
+#  describe "Home page" do
+#    before { visit root_path }
+#    let(:heading)    { 'Sample App' }
+#    let(:page_title) { '' }
+
+#    it_should_behave_like "all static pages"
+#    it { should_not have_selector 'title', text: '| Home' }
+#  end
+  
+  
     
   describe "Home page" do
     # With Prettier tests for the static pages. 
@@ -66,4 +83,28 @@ describe "StaticPages" do
     it { should have_selector('title', text: full_title('')) }
     it { should_not have_selector('title', text: '| Contact') }
   end
+  
+  it "should have the right links on the header layout" do
+    visit root_path
+
+    click_link "Home"
+    page.should have_selector 'title', text: full_title('')
+    #page.should have_selector 'title', text: 'tKiero Demo App'
+
+    click_link "About Us"
+    page.should have_selector 'title', text: full_title('')
+    #page.should have_selector 'title', text: full_title('About Us')
+
+    click_link "Contact"
+    page.should have_selector 'title', text: full_title('')
+    #page.should have_selector 'title', text: full_title('Contact')
+
+    click_link "Help"
+    page.should have_selector 'title', text: full_title('')
+    #page.should have_selector 'title', text: full_title('Help')
+
+    #click_link "Sign Up"
+    #page.should have_selector 'title', text: full_title('Sing Up')
+  end
+  
 end
