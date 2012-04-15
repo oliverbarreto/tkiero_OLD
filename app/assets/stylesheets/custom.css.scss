@@ -2,8 +2,8 @@
 
   body {
     padding-top: 60px;
-    padding-bottom:40px;
-    /* background: #049cdb; */
+    /* padding-bottom:40px;
+    background: #049cdb; */
     background: $infoBackground;
   }
 
@@ -38,7 +38,10 @@ textarea {
   }
 }
 
-
+.label.success {
+  background-color: $green;
+  
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,8 +61,15 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
-  
+  color: $grayLight; 
+}
+
+h4 {
+    color: $green;
+    line-height: 24px;
+    font-size: 16px;
+    padding-bottom: 10px;
+
 }
 
 p {
@@ -86,34 +96,6 @@ p {
   }
 }
 
-/* footer */
-footer {
-/*  margin-top: 45px;
-  */
-  padding-top: 15px;
-  border-top: 1px solid #eaeaea;
-  color: $grayLight;
-  a {
-    color: #555;
-    &:hover { 
-      color: #00BFFF;
-      text-decoration: none;
-    }
-  }  
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    margin-right: 20px;
-    li {
-    float: left;
-    margin-left: 10px;
-    }
-  }
-}
-
 /* Hero-Unit */
 .hero-unit {
 /*  background: #d9edf7; */  
@@ -136,7 +118,50 @@ footer {
   }
 }
 
-/* ROWS content */
+/* Call To Action Row */
+
+.calltoaction {
+  h2{
+    color:$green;
+  }
+}
+
+/* footer */
+footer {
+  /*  margin-top: 45px;
+  */
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: 1px solid #eaeaea;
+  color: #888987;
+  background: #1B1B1B;
+  a {
+    color: $white;
+    &:hover { 
+      color: #00BFFF;
+      text-decoration: none;
+    }
+  }
+  small {
+    float: left;
+    text-align: center;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    margin-right: 20px;
+    li {
+    float: left;
+    margin-left: 10px;
+    }
+  }
+  p {
+    font-size: 11px;
+    
+  }
+}
+
+/* ROWS content 
 .row {
   padding: 20px 0;
   h2{
@@ -144,3 +169,4 @@ footer {
   }
 }
 
+*/

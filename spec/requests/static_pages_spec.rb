@@ -7,7 +7,7 @@ describe "StaticPages" do
     #  response.status.should be(200)
     #end
 
-  let(:base_title) { "tKiero Demo App" }
+  let(:base_title) { "tKiero App" }
   subject { page }
  
 # Listing 5.35. Using an RSpec shared example to eliminate test duplication. 
