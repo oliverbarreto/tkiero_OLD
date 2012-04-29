@@ -1,6 +1,13 @@
 Tkiero::Application.routes.draw do
   
-  get "users/new"
+
+  #User SingUp & Login & Logout  
+  get "signup" => "users#new", :as => "signup"
+  resources :users
+
+  get "login" => "sessions#new", :as => "login"
+  get "logout" => "sessions#destroy", :as => "logout"
+  resources :sessions
 
   # Initial Routes made for Static Pages of the App
   #get "static_pages/home"
@@ -17,7 +24,7 @@ Tkiero::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   
   #User SingUp & Login & Logout  
-  match '/signup', to: 'users#new'
+  #match '/signup', to: 'users#new'
 
 
   # The priority is based upon order of creation:
