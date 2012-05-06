@@ -1,14 +1,32 @@
-<h1>Log In</h1>
+<!-- Log In & Log Out page -->
+<% provide(:title, 'Log In') %>
 
-<%= form_tag sessions_path do %>
-<p>
-	<%= label_tag :email %> <br />
-	<%= text_field_tag :email, params[:email] %>
-</p>
-<p>
-	<%= label_tag :password %> <br />
-	<%= password_field_tag :password %>
-</p>
+<div class="center hero-unit">
+	<!-- Login Form -->
+	<h2>tKiero App - Login</h2>
+	<p>
+		Please fill in the form with your credentials to login
+		<br />
+		tKiero App is one of current Build One IDeas Lab projects
+	</p><br />
 
-<p class="button"><%= submit_tag %></p>
-<% end %>
+	<%= form_tag sessions_path do %>
+	<p>
+		<%= label_tag :email %> 
+		<%= text_field_tag :email, params[:email], :placeholder => 'your eMail' %>
+	</p>
+	<p>
+		<%= label_tag :password %> 
+		<%= password_field_tag :password %>
+	</p>
+	
+	<br />			
+	<p><%= submit_tag "Login...", :class => "btn btn-large btn-success" %></p>
+	<% end %>
+	<br />			
+	<br />
+	<p>...ot if you don't have an account, create one here</p>
+	<%= link_to "Sign Up here", signup_path %>
+</div>
+
+
