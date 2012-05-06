@@ -39,21 +39,9 @@ describe "StaticPages" do
     it { should have_content('Build One IDeas') }
     it { should have_selector('h1',    text: "#{base_title}") }
     it { should have_selector('title', text: full_title('')) }
-    it { should_not have_selector 'title', text: '| Home' }
+    it { should have_selector 'title', text: '| Home' }
   end
 
-  describe "Home page 2" do
-    # Without Prettier tests for the static pages. 
-    
-    before { visit root_path } 
-
-    it { should have_content('Build One IDeas') }
-    it { should have_selector('h1', text: "#{base_title}") }
-    #it { should have_selector('title', text: "#{base_title}") }
-    it { should have_selector('title', text: full_title('')) }
-    it { should_not have_selector('title', text: '| Home') }
-  end
-  
   describe "Help page" do
     # Test for Help Page Tittle Content
     before { visit help_path } 
@@ -61,7 +49,7 @@ describe "StaticPages" do
     it { should have_selector('h1', text: "#{base_title}") }
     #it { should have_selector('title', text: "#{base_title}") }
     it { should have_selector('title', text: full_title('')) }
-    it { should_not have_selector('title', text: '| Help') }
+    it { should have_selector('title', text: '| Help') }
   end  
    
   describe "About page" do
@@ -71,7 +59,7 @@ describe "StaticPages" do
     it { should have_selector('h1', text: "#{base_title}") }
     #it { should have_selector('title', text: "#{base_title}") }
     it { should have_selector('title', text: full_title('')) }
-    it { should_not have_selector('title', text: '| About') }
+    it { should have_selector('title', text: '| About Us') }
   end  
 
   describe "Contact page" do
@@ -81,7 +69,7 @@ describe "StaticPages" do
     it { should have_selector('h1', text: "#{base_title}") }
     #it { should have_selector('title', text: "#{base_title}") }
     it { should have_selector('title', text: full_title('')) }
-    it { should_not have_selector('title', text: '| Contact') }
+    it { should have_selector('title', text: '| Contact') }
   end
   
   it "should have the right links on the header layout" do
