@@ -25,29 +25,36 @@
 			</div>
 		<% end %>
 		
-		<p>
-			<%= f.label :name %>
-			<%= f.text_field :name, :placeholder => "name" %>
-		</p>
-		<p>
-			<%= f.label :email %>
-			<%= f.text_field :email, :placeholder => "eMail"  %>
-		</p>
-		<p>
-			<%= f.label :password %>
-			<%= f.password_field :password, :placeholder =>'password' %>
-		</p>
-		<p>
-			<%= f.label :password_confirmation %>
-			<%= f.password_field :password_confirmation, :placeholder =>'confirm password'%>
-		</p>
 		<br />
-		
-		<p><%= f.submit "Create your account...", :class => "btn btn-large btn-success" %></p>
+		<div class="row">
+  			<div class="span6">
+				<p>
+					<%= f.label :name %>
+					<%= f.text_field :name, :placeholder => "name", autofocus:"true" %>
+				</p>
+				<p>
+					<%= f.label :email %>
+					<%= f.text_field :email, :placeholder => "eMail"  %>
+				</p>
+				<p>
+					<%= f.label :password %>
+					<%= f.password_field :password, :placeholder =>'password' %>
+				</p>
+				<p>
+					<%= f.label :password_confirmation %>
+					<%= f.password_field :password_confirmation, :placeholder =>'confirm password'%>
+				</p>
+				<br />
+				<p><%= f.submit "Create your account...", class:"btn btn-large btn-success" %></p>
+			</div>
+			<div class="span4">
+				<img src="http://placehold.it/350x330" alt="attention catching logo goes here">
+			</div>
+		</div>
 	<% end %>
 	<br />			
 	<p>...ot if you already have an account, login here</p>
-	<%= link_to "Log In here", login_path %>
+	<%= link_to "Log In here", login_path, class: "btn btn-large btn-success" %>
 
 </div>
     
