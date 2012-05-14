@@ -1,16 +1,12 @@
   @import "bootstrap";
 
-  /* mixins, variables, etc. */
   
-  $grayMediumLight: #eaeaea;
-  
-  
-  body {
+body {
     padding-top: 60px;
     /* padding-bottom:40px;
     background: #049cdb; */
     background: $infoBackground;
-  }
+}
 
   @import "bootstrap-responsive";
 
@@ -109,7 +105,7 @@ p {
     color: $white;  
   }
   h2{
-    color: $white;  
+    color: $yellow;  
   }
   h3{
     color: $white;  
@@ -120,6 +116,13 @@ p {
       color: $yellow;  
       text-decoration: none;
     }
+  }
+  p{
+    color: $white;  
+  }
+  label{
+    color: $white;  
+
   }
 }
 
@@ -167,13 +170,72 @@ footer {
 }
 
 
+/* Success Button */
+.btn-success {
+  color: $white;  
+  &:hover{
+    color: $yellow;  
+    text-decoration: none;
+  }
+}
 
-/* Debug footer */
-.alert {
 
+/* Forms - Para hacer que los textbox fields se iluminen as coger el foco*/
+/* input, textarea, select, .uneditable-input */
+ textarea:focus, input:focus 
+/*  input[type=text]:focus, input[type=password]:focus */
+{
+  border: 2px solid $yellow;
   
 }
 
+
+/* Gravatar Sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h2 {
+      font-size: 1.1em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+
+/* **************************************************** */
+/* mixins, variables, etc. */ 
+/*
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+*/ 
+/* **************************************************** */
+
+
+
+/* Debug footer */
 
 
 /* ROWS content 
